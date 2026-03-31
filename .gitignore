@@ -34,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local tooling
+.claude/
+
+# local docs and notes
+CARLOS LEON e n.pdf
+session-*.md

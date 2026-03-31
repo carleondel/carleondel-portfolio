@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carlos León — Portfolio
+
+Personal portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
+
+## Tech Stack
+
+- **Next.js 14** — App Router, Server Components
+- **TypeScript** — Strict mode
+- **Tailwind CSS v3.4** — Custom dark theme
+- **Framer Motion** — Subtle scroll animations
+- **Lucide React** — Icons
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm
+
+### Install
+
+```bash
+npm install
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Deploy to Vercel (Free)
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repo to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click "New Project" → Import your repository
+4. Vercel auto-detects Next.js — click "Deploy"
+5. Your site is live. Add a custom domain in project settings if you have one.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No environment variables or configuration needed. The Hobby plan is free.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Edit Content
 
-## Deploy on Vercel
+All content is in TypeScript files — no CMS needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| What | File | Notes |
+|---|---|---|
+| Site config (name, social links, nav) | `data/site.ts` | Update your name, links, and navigation |
+| Projects | `data/projects.ts` | Add/edit/remove project entries |
+| Experience | `data/experience.ts` | Add/edit/remove work experience |
+| About page copy | `app/about/page.tsx` | Edit prose directly in the component |
+| Home hero text | `components/sections/hero.tsx` | Edit the headline and intro |
+| Contact links | `data/site.ts` | Update the `social` object |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+```
+app/                    → Pages (Next.js App Router)
+components/
+  layout/               → Header, Footer, Navigation
+  ui/                   → Reusable components (Section, Cards, AnimateIn)
+  sections/             → Homepage sections (Hero, Projects, etc.)
+data/                   → Content data (projects, experience, site config)
+lib/                    → Utilities
+```
