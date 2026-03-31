@@ -1,6 +1,9 @@
 # Carlos León — Portfolio
 
 Personal portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
+It is designed as a clean, code-managed portfolio for a data engineer profile,
+with strong emphasis on positioning, projects, experience, and a lightweight
+writing archive.
 
 ## Tech Stack
 
@@ -49,25 +52,37 @@ No environment variables or configuration needed. The Hobby plan is free.
 
 ## Edit Content
 
-All content is in TypeScript files — no CMS needed.
+All content is in TypeScript files or static assets — no CMS needed.
 
 | What | File | Notes |
 |---|---|---|
-| Site config (name, social links, nav) | `data/site.ts` | Update your name, links, and navigation |
-| Projects | `data/projects.ts` | Add/edit/remove project entries |
-| Experience | `data/experience.ts` | Add/edit/remove work experience |
-| About page copy | `app/about/page.tsx` | Edit prose directly in the component |
-| Home hero text | `components/sections/hero.tsx` | Edit the headline and intro |
-| Contact links | `data/site.ts` | Update the `social` object |
+| Site config (name, links, nav) | `data/site.ts` | Main metadata and navigation |
+| Profile copy | `data/profile.ts` | Hero and positioning copy |
+| Projects | `data/projects.ts` | Featured projects, architecture, outcomes |
+| Experience | `data/experience.ts` | Professional trajectory |
+| Education & certifications | `data/credentials.ts` | Education and certification cards |
+| Writing entries | `data/writing.ts` | Future dated writing entries |
+| About page copy | `app/about/page.tsx` | Longer personal/professional context |
+| Resume PDF | `public/carlos-leon-resume.pdf` | Downloaded from `/resume` |
 
 ## Project Structure
 
 ```
-app/                    → Pages (Next.js App Router)
+app/                    → Pages, SEO assets, sitemap, robots
 components/
   layout/               → Header, Footer, Navigation
   ui/                   → Reusable components (Section, Cards, AnimateIn)
-  sections/             → Homepage sections (Hero, Projects, etc.)
-data/                   → Content data (projects, experience, site config)
+  sections/             → Homepage and supporting sections
+data/                   → Content data (profile, projects, experience, writing)
 lib/                    → Utilities
+public/                 → Static assets (resume PDF)
 ```
+
+## Main Pages
+
+- `/` — Positioning, current role, and featured proof
+- `/projects` — Project details and technical proof
+- `/experience` — Professional trajectory
+- `/writing` — Minimal archive for future entries
+- `/contact` — Contact links and resume download
+- `/resume` — Utility route that redirects to the PDF resume
