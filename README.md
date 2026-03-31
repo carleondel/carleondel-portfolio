@@ -5,6 +5,10 @@ It is designed as a clean, code-managed portfolio for a data engineer profile,
 with strong emphasis on positioning, projects, experience, and a lightweight
 writing archive.
 
+## Live Site
+
+- Production: [https://carleondel-portfolio.vercel.app/](https://carleondel-portfolio.vercel.app/)
+
 ## Tech Stack
 
 - **Next.js 14** — App Router, Server Components
@@ -40,15 +44,10 @@ Open [http://localhost:3000](http://localhost:3000).
 npm run build
 ```
 
-## Deploy to Vercel (Free)
+## Deployment
 
-1. Push this repo to GitHub
-2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
-3. Click "New Project" → Import your repository
-4. Vercel auto-detects Next.js — click "Deploy"
-5. Your site is live. Add a custom domain in project settings if you have one.
-
-No environment variables or configuration needed. The Hobby plan is free.
+The site is deployed on Vercel.
+No environment variables or additional runtime configuration are required.
 
 ## Edit Content
 

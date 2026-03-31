@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   },
   description:
     "Data Engineer, analytics-focused. I build business-facing data products and modern data workflows with dbt, Google Cloud, Python, and SQL.",
-  metadataBase: new URL("https://carlosleon.dev"),
+  metadataBase: new URL("https://carleondel-portfolio.vercel.app"),
   openGraph: {
     title: "Carlos León — Data Engineer, analytics-focused",
     description:
       "Data Engineer, analytics-focused. I build business-facing data products and modern data workflows with dbt, Google Cloud, Python, and SQL.",
-    url: "https://carlosleon.dev",
+    url: "https://carleondel-portfolio.vercel.app",
     siteName: "Carlos León",
     locale: "en_US",
     type: "website",
