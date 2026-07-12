@@ -65,6 +65,52 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "madrid-no2-forecasting",
+    title: "Madrid NO₂ Forecasting Pipeline",
+    summary:
+      "Leakage-safe forecasting of station-level NO₂ in Madrid at 1, 24, and 72 hours ahead, built as a reproducible data + ML pipeline with PostgreSQL, dbt, and per-horizon XGBoost models.",
+    context:
+      "Most forecasting portfolios overstate results by leaking future information into features or evaluating on random splits. I wanted the opposite: honest, reproducible time-series evaluation on official Madrid air-quality data, where every claim maps to an executable check.",
+    whatIBuilt:
+      "An end-to-end pipeline from typed Python ingestion of Madrid Open Data (1.6M+ hourly observations, 2018–2025) through dbt-modeled PostgreSQL marts, into leakage-safe feature engineering, rolling-origin backtesting with a temporal embargo, and direct XGBoost models per horizon with conformal P10–P90 prediction intervals.",
+    architecture: [
+      "Typed Python ingestion normalizes official Madrid Open Data and Open-Meteo archives into partitioned Parquet and a PostgreSQL raw schema, with UTC normalization and explicit DST handling.",
+      "dbt owns the analytical grain and data quality across staging, intermediate, and mart layers; Python owns features, backtesting, training, and prediction.",
+      "Features are restricted to prediction time (lags and shifted rolling statistics only), enforced by pytest tests that fail if future data enters the features.",
+      "Rolling-origin backtests compare direct per-horizon XGBoost models against seasonal-naive baselines, with versioned benchmark manifests protecting published metrics.",
+    ],
+    outcomes: [
+      "50% MAE improvement over the best naive baseline at 1 hour ahead, with honest, modest ~12% gains reported at 24 and 72 hours.",
+      "A clean clone reproduces the demo path with one command, and CI runs the real PostgreSQL + dbt integration on every push.",
+      "Forecasts ship with empirical conformal prediction intervals, reported by their worst fold rather than their average.",
+    ],
+    nextStep:
+      "Add forecast-based weather features from archived weather forecasts (which would have been known at prediction time) and adaptive conformal calibration to fix undercoverage in seasonal transition folds.",
+    pipeline: [
+      "Madrid Open Data",
+      "Python Ingestion",
+      "PostgreSQL",
+      "dbt",
+      "Leakage-safe Features",
+      "XGBoost",
+      "Rolling-origin Backtest",
+    ],
+    stack: [
+      "Python",
+      "PostgreSQL",
+      "dbt",
+      "XGBoost",
+      "pytest",
+      "uv",
+      "Docker",
+      "GitHub Actions",
+    ],
+    role: "Data & ML Engineer",
+    image: "/projects/no2-forecast.png",
+    links: { github: "https://github.com/carleondel/madrid_pollution_project" },
+    featured: true,
+  },
+  {
     slug: "nba-data-pipeline",
     title: "NBA Data Pipeline",
     summary:
