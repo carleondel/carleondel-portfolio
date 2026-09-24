@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, FileText, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import type { Dictionary } from "@/data/i18n/types";
 import { SocialLinks } from "@/components/ui/social-links";
@@ -67,6 +67,20 @@ export function Sidebar({ lang, dict }: SidebarProps) {
         <h2 className="mt-2 text-lg font-medium tracking-tight text-accent sm:text-xl">
           {profile.role}
         </h2>
+        <a
+          href={siteConfig.work.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-3 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 py-1 pl-2 pr-3 text-sm text-text-secondary transition-colors hover:border-accent/60 hover:text-text-primary"
+        >
+          <Image src={siteConfig.work.logo} alt="" width={16} height={16} className="h-4 w-4" />
+          {profile.workAt}
+          <span className="font-medium text-text-primary">{siteConfig.work.company}</span>
+          <ArrowUpRight
+            size={14}
+            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          />
+        </a>
         <p className="mt-4 max-w-sm text-xl font-medium leading-snug tracking-tight text-text-secondary sm:text-2xl">
           {headline.start}
           <span className="whitespace-nowrap text-text-primary">{headline.day}</span>

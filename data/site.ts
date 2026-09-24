@@ -10,6 +10,7 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/in/carleondel",
     email: "carleondel@gmail.com",
   },
+  work: { company: "Astrafy", url: "https://astrafy.io", logo: "/logos/astrafy.png" },
   now: { project: "DataForge", slug: "dataforge" },
   sections: ["about", "builds", "data", "experience", "blog", "contact"] as SectionId[],
 };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Sidebar } from "@/components/home/sidebar";
 import { HomeSection } from "@/components/home/home-section";
 import { ProjectRow } from "@/components/ui/project-row";
@@ -115,12 +115,6 @@ export default function HomePage({ params }: { params: { lang: Lang } }) {
               {dict.contact.title.end}
             </h3>
             <p className="mt-4 max-w-md leading-relaxed text-text-secondary">{dict.contact.text}</p>
-            <div className="mt-8">
-              <a href={`mailto:${siteConfig.social.email}`} className="btn-primary">
-                <Mail size={15} />
-                {dict.profile.emailMe}
-              </a>
-            </div>
             <div className="mt-8">
               <ContactList labels={dict.contact.links} />
             </div>

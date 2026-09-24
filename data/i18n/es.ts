@@ -16,6 +16,7 @@ export const es: Dictionary = {
   },
   profile: {
     role: "Data Engineer & builder",
+    workAt: "Data Engineer en",
     headline: {
       start: "Construyo plataformas de datos ",
       day: "de día",

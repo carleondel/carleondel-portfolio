@@ -31,6 +31,7 @@ export interface Dictionary {
   nav: Record<SectionId, string>;
   profile: {
     role: string;
+    workAt: string;
     headline: { start: string; day: string; middle: string; night: string; end: string };
     location: string;
     building: string;
