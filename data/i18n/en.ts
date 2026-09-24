@@ -29,7 +29,7 @@ export const en: Dictionary = {
     resume: "Resume",
   },
   about: [
-    "I'm a Data Engineer at Astrafy in Madrid, where I build data platforms and data products on Google Cloud with dbt, BigQuery, Airflow, and Terraform. I'm a certified Google Cloud Professional Data Engineer. Before that I did BI for the Spanish Ministry of Defense, SQL-heavy consulting at Minsait, and machine learning at Red Eléctrica's innovation lab.",
+    "I'm a Data Engineer at Astrafy in Madrid, where I build data platforms and data products on Google Cloud with dbt, BigQuery, Airflow, and Terraform. I'm Google Cloud certified as a Professional Data Engineer and Professional Cloud Architect. Before that I did BI for the Spanish Ministry of Defense, SQL-heavy consulting at Minsait, and machine learning at Red Eléctrica's innovation lab.",
     "I studied Mathematics, and I still approach problems the same way: understand the structure first, then build. Lately that means building a lot outside work too: a certification prep SaaS, the ML behind a hackathon financial-health engine, a personal finance dashboard, and a website for a small fashion brand.",
     "I'm most drawn to where engineering meets product and startups: figuring out what's worth building and getting it working end to end. Outside of that, it's music, economics, literature, and too many essays.",
   ],
@@ -280,7 +280,7 @@ export const en: Dictionary = {
     },
     sii: {
       role: "BI Engineer",
-      period: "Sep 2024 - Sep 2025",
+      period: "Oct 2024 - Sep 2025",
       description:
         "Developed data engineering and BI solutions for the Ministry of Defense, improving planning, reporting, and visibility across financial and operational data.",
       contributions: [
@@ -292,7 +292,7 @@ export const en: Dictionary = {
     },
     minsait: {
       role: "Data Consultant",
-      period: "Jul 2023 - Feb 2024",
+      period: "Jul 2023 - Jan 2024",
       description:
         "Worked on SQL-heavy data solutions, partnering with analysts and technical teams to improve performance, reliability, and process quality.",
       contributions: [
@@ -335,6 +335,12 @@ export const en: Dictionary = {
       by: "Google Cloud",
       detail:
         "Professional certification focused on designing, building, operationalizing, securing, and monitoring data processing systems on Google Cloud.",
+    },
+    {
+      name: "Professional Cloud Architect",
+      by: "Google Cloud",
+      detail:
+        "Professional certification focused on designing secure, scalable, and reliable cloud architectures on Google Cloud.",
     },
     {
       name: "Data Engineering: SQL, dbt, Snowflake & Power BI",

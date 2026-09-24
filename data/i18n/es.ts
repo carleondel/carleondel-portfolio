@@ -29,7 +29,7 @@ export const es: Dictionary = {
     resume: "CV",
   },
   about: [
-    "Soy Data Engineer en Astrafy, en Madrid, donde construyo plataformas y productos de datos en Google Cloud con dbt, BigQuery, Airflow y Terraform. Tengo la certificación Google Cloud Professional Data Engineer. Antes hice BI para el Ministerio de Defensa, consultoría SQL en Minsait y machine learning en el laboratorio de innovación de Red Eléctrica.",
+    "Soy Data Engineer en Astrafy, en Madrid, donde construyo plataformas y productos de datos en Google Cloud con dbt, BigQuery, Airflow y Terraform. Tengo las certificaciones Google Cloud Professional Data Engineer y Professional Cloud Architect. Antes hice BI para el Ministerio de Defensa, consultoría SQL en Minsait y machine learning en el laboratorio de innovación de Red Eléctrica.",
     "Estudié Matemáticas y sigo afrontando los problemas igual: primero entender la estructura, después construir. Últimamente eso significa construir mucho también fuera del trabajo: un SaaS para preparar certificaciones, el ML de un motor de salud financiera en un hackathon, un dashboard de finanzas personales y la web de una pequeña marca de ropa.",
     "Lo que más me atrae es el punto donde se cruzan ingeniería, producto y startups: decidir qué merece la pena construir y hacer que funcione de principio a fin. Fuera de eso: música, economía, literatura y demasiados ensayos.",
   ],
@@ -280,7 +280,7 @@ export const es: Dictionary = {
     },
     sii: {
       role: "BI Engineer",
-      period: "sep 2024 - sep 2025",
+      period: "oct 2024 - sep 2025",
       description:
         "Desarrollé soluciones de ingeniería de datos y BI para el Ministerio de Defensa, mejorando la planificación, el reporting y la visibilidad de datos financieros y operativos.",
       contributions: [
@@ -292,7 +292,7 @@ export const es: Dictionary = {
     },
     minsait: {
       role: "Data Consultant",
-      period: "jul 2023 - feb 2024",
+      period: "jul 2023 - ene 2024",
       description:
         "Trabajé en soluciones de datos con mucho SQL, junto a analistas y equipos técnicos, para mejorar rendimiento, fiabilidad y calidad de procesos.",
       contributions: [
@@ -335,6 +335,12 @@ export const es: Dictionary = {
       by: "Google Cloud",
       detail:
         "Certificación profesional sobre diseño, construcción, operación, seguridad y monitorización de sistemas de procesamiento de datos en Google Cloud.",
+    },
+    {
+      name: "Professional Cloud Architect",
+      by: "Google Cloud",
+      detail:
+        "Certificación profesional sobre diseño de arquitecturas cloud seguras, escalables y fiables en Google Cloud.",
     },
     {
       name: "Data Engineering: SQL, dbt, Snowflake & Power BI",
