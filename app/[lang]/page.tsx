@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mail } from "lucide-react";
 import { Sidebar } from "@/components/home/sidebar";
 import { HomeSection } from "@/components/home/home-section";
 import { ProjectRow } from "@/components/ui/project-row";
 import { ExperienceRow } from "@/components/ui/experience-row";
-import { CopyEmail } from "@/components/ui/copy-email";
 import { ContactList } from "@/components/ui/social-links";
 import { PostList } from "@/components/ui/post-list";
 import { projects, type ProjectCategory } from "@/data/projects";
@@ -117,9 +116,10 @@ export default function HomePage({ params }: { params: { lang: Lang } }) {
             </h3>
             <p className="mt-4 max-w-md leading-relaxed text-text-secondary">{dict.contact.text}</p>
             <div className="mt-8">
-              <CopyEmail
-                labels={{ emailMe: dict.profile.emailMe, copy: dict.contact.copy, copied: dict.contact.copied }}
-              />
+              <a href={`mailto:${siteConfig.social.email}`} className="btn-primary">
+                <Mail size={15} />
+                {dict.profile.emailMe}
+              </a>
             </div>
             <div className="mt-8">
               <ContactList labels={dict.contact.links} />

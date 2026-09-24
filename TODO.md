@@ -9,6 +9,7 @@
 
 ## Contenido
 
-- [ ] Actualizar el CV (`public/carlos-leon-resume.pdf`) con el nuevo posicionamiento.
+- [ ] Más adelante: segunda versión del CV orientada a builder/startups (con sección de
+      proyectos: DataForge, X-Ray, NO₂). La actual, orientada a data, es la que enlaza la web.
 - [ ] Escribir el primer post (copiar `content/blog/_template.md`).
 - [ ] Mantener la tarjeta "Now" al día (`data/i18n/*.ts` → `now`, y `siteConfig.now`).

@@ -43,8 +43,6 @@ export interface Dictionary {
   contact: {
     title: { start: string; accent: string; end: string };
     text: string;
-    copy: string;
-    copied: string;
     links: { email: string; github: string; linkedin: string; resume: string };
   };
   ui: {

@@ -47,8 +47,6 @@ export const en: Dictionary = {
   contact: {
     title: { start: "Let's build ", accent: "something", end: "." },
     text: "Whether it's a data role, a product idea, or a hackathon team, my inbox is open. Email is the fastest way to reach me.",
-    copy: "Copy",
-    copied: "Copied",
     links: { email: "Email", github: "GitHub", linkedin: "LinkedIn", resume: "Resume (PDF)" },
   },
   ui: {
