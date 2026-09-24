@@ -50,7 +50,7 @@ Deployed on Vercel. No environment variables required.
 app/
   [lang]/page.tsx            → Home: sidebar + About, Builds, Data products, Experience, Blog, Contact
   [lang]/(pages)/            → Projects, case studies, experience, blog
-  og/route.tsx               → Social preview image (?lang=es)
+  public/og-{en,es}.jpg      → Social preview images (screenshots of the home)
 middleware.ts                → Locale routing
 components/home, components/ui
 data/                        → Content

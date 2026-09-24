@@ -15,5 +15,8 @@
   only shows in dev.
 - Project screenshots in `public/projects/` (~1600px JPEG); videos in `public/videos/`
   (H.264, compressed with ffmpeg).
+- Social preview images `public/og-en.jpg` / `og-es.jpg` are 1200x628 dark-mode
+  screenshots of the home (headless Chrome at 1600x838, scale 2). Regenerate them
+  when the top of the home changes.
 - Copy style: no em dashes (—).
 - Pending work: `TODO.md`.

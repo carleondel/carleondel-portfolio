@@ -34,7 +34,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const lang = (isLang(params.lang) ? params.lang : "en") as Lang;
   const { meta } = getDictionary(lang);
-  const image = { url: `/og?lang=${lang}`, width: 1200, height: 630, alt: meta.title };
+  const image = { url: `/og-${lang}.jpg`, width: 1200, height: 628, alt: meta.title };
   return {
     title: { default: meta.title, template: "%s · Carlos León" },
     description: meta.description,

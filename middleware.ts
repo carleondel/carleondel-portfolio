@@ -18,6 +18,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next|api|og|icon.svg|sitemap.xml|robots.txt|.*\\..*).*)",
+    "/((?!_next|api|icon.svg|sitemap.xml|robots.txt|.*\\..*).*)",
   ],
 };
