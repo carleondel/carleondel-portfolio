@@ -1,20 +1,25 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/data/site";
+import { projects } from "@/data/projects";
+import { getPosts } from "@/lib/blog";
+import { locales, localePath } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://carleondel-portfolio.vercel.app";
-  const routes = [
-    "",
-    "/about",
+  const paths = [
+    "/",
     "/projects",
     "/experience",
-    "/writing",
-    "/contact",
+    "/blog",
+    ...projects.map((p) => `/projects/${p.slug}`),
+    ...getPosts().map((p) => `/blog/${p.slug}`),
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
-  }));
+  return locales.flatMap((lang) =>
+    paths.map((path) => ({
+      url: `${siteConfig.url}${localePath(lang, path)}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: path === "/" ? 1 : 0.8,
+    }))
+  );
 }

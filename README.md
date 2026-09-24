@@ -1,87 +1,61 @@
-# Carlos León — Portfolio
+# Carlos León · Portfolio
 
-Personal portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
-It is designed as a clean, code-managed portfolio for a data engineer profile,
-with strong emphasis on positioning, projects, experience, and a lightweight
-writing archive.
+Personal portfolio built with Next.js 14, TypeScript, and Tailwind CSS.
+Positioning: Data Engineer & builder. Data platforms by day, products by night.
 
 ## Live Site
 
-- Production: [https://carleondel-portfolio.vercel.app/](https://carleondel-portfolio.vercel.app/)
+- Production: [https://carlosleon.dev](https://carlosleon.dev)
+
+## Features
+
+- English (`/`) and Spanish (`/es`)
+- Light and dark theme (follows the system, remembers the choice)
+- Case study page per project, with embedded demo videos
+- Markdown blog
 
 ## Tech Stack
 
-- **Next.js 14** — App Router, Server Components
-- **TypeScript** — Strict mode
-- **Tailwind CSS v3.4** — Custom dark theme
-- **Framer Motion** — Subtle scroll animations
-- **Lucide React** — Icons
+- **Next.js 14** (App Router, static generation, middleware for i18n)
+- **TypeScript** (strict)
+- **Tailwind CSS v3.4** with CSS-variable theme tokens
+- **Framer Motion**, **Lucide React**
+- **gray-matter** + **marked** for the blog
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18.17 or later
-- npm
-
-### Install
-
 ```bash
 npm install
-```
-
-### Run locally
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-### Build
-
-```bash
+npm run dev      # http://localhost:3000
+npm run lint
 npm run build
 ```
 
-## Deployment
-
-The site is deployed on Vercel.
-No environment variables or additional runtime configuration are required.
+Deployed on Vercel. No environment variables required.
 
 ## Edit Content
 
-All content is in TypeScript files or static assets — no CMS needed.
-
-| What | File | Notes |
-|---|---|---|
-| Site config (name, links, nav) | `data/site.ts` | Main metadata and navigation |
-| Profile copy | `data/profile.ts` | Hero and positioning copy |
-| Projects | `data/projects.ts` | Featured projects, architecture, outcomes |
-| Experience | `data/experience.ts` | Professional trajectory |
-| Education & certifications | `data/credentials.ts` | Education and certification cards |
-| Writing entries | `data/writing.ts` | Future dated writing entries |
-| About page copy | `app/about/page.tsx` | Longer personal/professional context |
-| Resume PDF | `public/carlos-leon-resume.pdf` | Downloaded from `/resume` |
+| What | File |
+|---|---|
+| All copy (both languages) | `data/i18n/en.ts`, `data/i18n/es.ts` |
+| Projects: stack, links, images, videos | `data/projects.ts` |
+| Experience: company, stack | `data/experience.ts` |
+| Site config: URL, socials, photo, "Now" project | `data/site.ts` |
+| Blog posts | `content/blog/*.md` (copy `_template.md`) |
+| Images, videos, resume | `public/` |
 
 ## Project Structure
 
 ```
-app/                    → Pages, SEO assets, sitemap, robots
-components/
-  layout/               → Header, Footer, Navigation
-  ui/                   → Reusable components (Section, Cards, AnimateIn)
-  sections/             → Homepage and supporting sections
-data/                   → Content data (profile, projects, experience, writing)
-lib/                    → Utilities
-public/                 → Static assets (resume PDF)
+app/
+  [lang]/page.tsx            → Home: sidebar + About, Builds, Data products, Experience, Blog, Contact
+  [lang]/(pages)/            → Projects, case studies, experience, blog
+  og/route.tsx               → Social preview image (?lang=es)
+middleware.ts                → Locale routing
+components/home, components/ui
+data/                        → Content
+content/blog/                → Posts
+lib/                         → i18n, blog, utils
 ```
 
-## Main Pages
-
-- `/` — Positioning, current role, and featured proof
-- `/projects` — Project details and technical proof
-- `/experience` — Professional trajectory
-- `/writing` — Minimal archive for future entries
-- `/contact` — Contact links and resume download
-- `/resume` — Utility route that redirects to the PDF resume
+See `TODO.md` for pending tasks.

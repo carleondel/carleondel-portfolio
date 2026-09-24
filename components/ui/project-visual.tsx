@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
 
 interface ProjectVisualProps {
   steps: string[];
@@ -6,24 +6,18 @@ interface ProjectVisualProps {
 
 export function ProjectVisual({ steps }: ProjectVisualProps) {
   return (
-    <div className="rounded-lg border border-border bg-background/60 p-4">
-      <div className="flex flex-wrap items-center gap-2">
-        {steps.map((step, index) => (
-          <div key={step} className="flex items-center gap-2">
-            <div
-              className={cn(
-                "rounded-md border border-border bg-surface px-3 py-2",
-                "text-xs font-medium text-text-primary"
-              )}
-            >
-              {step}
-            </div>
-            {index < steps.length - 1 && (
-              <span className="text-text-secondary text-xs">→</span>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
+    <ol className="flex flex-wrap items-center gap-y-3 rounded-xl border border-border bg-surface/60 p-4">
+      {steps.map((step, index) => (
+        <li key={step} className="flex items-center">
+          <span className="flex items-center gap-2 rounded-md border border-border bg-background px-3 py-1.5 font-mono text-xs text-text-primary">
+            <span className="text-accent">{String(index + 1).padStart(2, "0")}</span>
+            {step}
+          </span>
+          {index < steps.length - 1 && (
+            <ChevronRight size={14} className="mx-1 text-text-secondary/60" />
+          )}
+        </li>
+      ))}
+    </ol>
   );
 }

@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 
+const color = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
+
 const config: Config = {
+  darkMode: "class",
   content: [
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
@@ -9,20 +12,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0a",
-        surface: "#111111",
-        "surface-hover": "#1a1a1a",
-        border: "#222222",
-        "text-primary": "#ededed",
-        "text-secondary": "#888888",
-        accent: "#d4d4d4",
+        background: color("background"),
+        surface: color("surface"),
+        "surface-hover": color("surface-hover"),
+        border: color("border"),
+        "text-primary": color("text-primary"),
+        "text-secondary": color("text-secondary"),
+        accent: color("accent"),
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
-      },
-      maxWidth: {
-        container: "1200px",
       },
     },
   },
