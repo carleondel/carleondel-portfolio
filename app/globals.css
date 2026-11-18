@@ -103,6 +103,12 @@
     @apply bg-transparent p-0;
   }
   .prose-post img {
-    @apply rounded-xl border border-border;
+    @apply h-auto w-full rounded-xl border border-border;
+  }
+  .prose-post figure {
+    @apply my-10;
+  }
+  .prose-post figcaption {
+    @apply mt-3 text-center text-sm text-text-secondary;
   }
 }

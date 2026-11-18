@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { getDictionary } from "@/data/i18n";
-import { formatDate, getPost, getPosts } from "@/lib/blog";
+import { formatDate, getPost, getPosts, type PostMeta } from "@/lib/blog";
+import type { Dictionary } from "@/data/i18n/types";
 import { locales, localePath, type Lang } from "@/lib/i18n";
 
 interface Props {
@@ -20,7 +21,27 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug);
   if (!post) return {};
-  return { title: post.meta.title, description: post.meta.summary };
+  const { meta } = post;
+  const images = meta.cover ? [{ url: meta.cover, alt: meta.title }] : undefined;
+  return {
+    title: meta.title,
+    description: meta.summary,
+    alternates: meta.canonical ? { canonical: meta.canonical.url } : undefined,
+    openGraph: {
+      type: "article",
+      title: meta.title,
+      description: meta.summary,
+      url: localePath(params.lang, `/blog/${meta.slug}`),
+      publishedTime: meta.date,
+      ...(images && { images }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: meta.summary,
+      ...(images && { images }),
+    },
+  };
 }
 
 export default async function PostPage({ params }: Props) {
@@ -50,8 +71,40 @@ export default async function PostPage({ params }: Props) {
         {meta.title}
       </h1>
       {meta.summary && <p className="mt-4 text-lg leading-relaxed text-text-secondary">{meta.summary}</p>}
+      {meta.canonical && (
+        <OriginalLink canonical={meta.canonical} labels={blog} className="mt-5" />
+      )}
 
       <div lang={meta.lang} className="prose-post mt-10 border-t border-border pt-10" dangerouslySetInnerHTML={{ __html: html }} />
+
+      {meta.canonical && (
+        <div className="mt-14 rounded-xl border border-border bg-surface px-5 py-4">
+          <OriginalLink canonical={meta.canonical} labels={blog} />
+        </div>
+      )}
     </article>
+  );
+}
+
+interface OriginalLinkProps {
+  canonical: NonNullable<PostMeta["canonical"]>;
+  labels: Dictionary["pages"]["blog"];
+  className?: string;
+}
+
+function OriginalLink({ canonical, labels, className }: OriginalLinkProps) {
+  return (
+    <p className={`text-sm text-text-secondary ${className ?? ""}`}>
+      {canonical.site && <>{labels.originallyPublished} {canonical.site}. </>}
+      <a
+        href={canonical.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-baseline font-medium text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent"
+      >
+        {labels.readOriginal}
+        <ArrowUpRight size={14} className="ml-0.5 shrink-0 translate-y-0.5" />
+      </a>
+    </p>
   );
 }
