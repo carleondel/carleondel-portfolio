@@ -88,6 +88,8 @@ export interface Dictionary {
       back: string;
       inOtherLang: { en: string; es: string };
       draft: string;
+      originallyPublished: string;
+      readOriginal: string;
     };
   };
   projects: Record<string, ProjectCopy>;

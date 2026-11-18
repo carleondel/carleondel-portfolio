@@ -13,6 +13,10 @@ export interface PostMeta {
   date: string;
   lang: Lang;
   draft: boolean;
+  /** Image for link previews, path under /public. */
+  cover?: string;
+  /** Original publication, when the post was first published elsewhere. */
+  canonical?: { url: string; site: string };
 }
 
 const showDrafts = process.env.NODE_ENV !== "production";
@@ -26,6 +30,10 @@ function read(file: string) {
     date: new Date(data.date).toISOString(),
     lang: data.lang === "es" ? "es" : "en",
     draft: Boolean(data.draft),
+    ...(data.cover && { cover: String(data.cover) }),
+    ...(data.canonical?.url && {
+      canonical: { url: String(data.canonical.url), site: String(data.canonical.site ?? "") },
+    }),
   };
   return { meta, content };
 }

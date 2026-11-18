@@ -106,6 +106,8 @@ export const en: Dictionary = {
       back: "All posts",
       inOtherLang: { en: "In English", es: "In Spanish" },
       draft: "Draft",
+      originallyPublished: "Originally published in",
+      readOriginal: "Read the original",
     },
   },
   projects: {
