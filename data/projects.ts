@@ -23,16 +23,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "dataforge",
-    title: "DataForge",
+    slug: "certquestions",
+    title: "CertQuestions",
     category: "product",
     year: "2026",
-    stack: ["React", "Vite", "Supabase", "PostgreSQL", "Vitest", "Vercel", "Docker"],
-    image: "/projects/dataforge.jpg",
-    video: { type: "file", src: "/videos/dataforge.mp4", poster: "/projects/dataforge.jpg" },
+    stack: ["React", "Vite", "Supabase", "PostgreSQL", "Vitest"],
+    image: "/projects/certquestions.jpg",
     links: {
-      live: "https://dataforge-inky.vercel.app",
-      github: "https://github.com/carleondel/gcp-pde-exam-prep",
+      live: "https://certquestions.app",
     },
     featured: true,
   },

@@ -37,7 +37,7 @@ export const es: Dictionary = {
   now: {
     label: "Ahora",
     update:
-      "Llevando mi app de preparación de certificaciones de herramienta personal a producto real: más certificaciones, un pipeline para generar y validar preguntas a partir de la documentación oficial y todo lo necesario para abrirla al público.",
+      "Haciendo crecer CertQuestions, mi app para preparar certificaciones: más exámenes, más gente aprobando con ella y un vídeo del producto en camino.",
   },
   intros: {
     builds:
@@ -111,30 +111,28 @@ export const es: Dictionary = {
     },
   },
   projects: {
-    dataforge: {
+    certquestions: {
       tagline:
-        "SaaS para preparar certificaciones con modo práctica, simulacros cronometrados y un sistema de estudio gamificado.",
+        "Práctica para certificaciones de Google Cloud con cada opción explicada, simulacros con el formato real del examen y bancos de preguntas fechados.",
       summary:
-        "Empezó como mi herramienta para preparar el examen Google Cloud Professional Data Engineer, que aprobé. Ahora es un producto multi-certificación con cuentas, sincronización en la nube y prueba gratuita.",
+        "Empezó como mi herramienta para preparar el examen Google Cloud Professional Data Engineer, que aprobé. Ahora es un producto de pago en certquestions.app con certificaciones de Google Cloud y Google Workspace, clientes de pago y gente aprobando sus exámenes con él.",
       role: "En solitario: producto, diseño e ingeniería",
-      status: "En producción · beta gratuita",
+      status: "En producción · planes de pago",
       context:
-        "Construí la primera versión para estudiar el examen Google Cloud Professional Data Engineer, que aprobé. Cuando vi que a mí me funcionaba, la pregunta interesante pasó a ser si podía funcionarle a más gente, así que lo convertí en un producto.",
+        "La mayoría de recursos para preparar certificaciones te dan una letra y un hilo de foro. Yo quería entender por qué cada respuesta era la correcta, así que construí mi propia herramienta para el examen Professional Data Engineer y la volví a usar para Professional Cloud Architect. Aprobé los dos. Cuando vi que a mí me funcionaba, la pregunta pasó a ser si otra gente pagaría por ella, así que la convertí en un producto.",
       whatIBuilt:
-        "Una app en React con landing estática, login con Supabase (Google, GitHub, email o magic link), progreso sincronizado entre dispositivos y una prueba de 20 preguntas sin cuenta. Incluye práctica y estudio por bloques, simulacros cronometrados con los mismos pesos que el examen real, un reto diario y una capa de gamificación con XP, rangos, logros y jefes finales.",
+        "Una landing pública y una app de estudio. Cada pregunta explica por qué cada opción es correcta o incorrecta. Los bloques de estudio recorren todo el banco, los simulacros cronometrados siguen el número de preguntas, la duración y los pesos por dominio de cada examen real, y las sesiones de puntos débiles cargan tus peores dominios o tus fallos en un toque. Hay una prueba gratuita en cada examen sin necesidad de cuenta, pases de pago único por examen o un plan Pro para varios, y una capa opcional de recompensas con XP, rangos, rachas y un reto diario.",
       architecture: [
-        "Un motor agnóstico de la certificación: cada una es una carpeta con su manifiesto, dominios y banco de preguntas, así que añadir otra no toca la app.",
-        "localStorage es la caché de la que lee la app. Cada clave se replica en Supabase (con debounce y row-level security por usuario), y las escrituras sin confirmar se envían en la siguiente visita.",
-        "Las vistas solo pintan y emiten eventos. El estado vive en hooks y en un motor puro cubierto con Vitest, y los bancos de preguntas se cargan en chunks bajo demanda.",
-        "Se despliega en Vercel con cada push, y también funciona en local o en Docker detrás de nginx.",
+        "Un solo motor para todos los exámenes: cada certificación es solo contenido (sus dominios, pesos y banco de preguntas), así que añadir un examen nuevo no toca la app.",
+        "La calidad del contenido como funcionalidad: cada banco muestra la fecha de su última actualización, y las preguntas que ya no encajan con el examen actual se marcan como desactualizadas en vez de mantenerse sin avisar.",
+        "El progreso se guarda con cada respuesta y se sincroniza entre dispositivos, así que un simulacro a medias vuelve exactamente donde lo dejaste, en cualquier dispositivo.",
+        "Los bancos de pago solo se sirven a las cuentas cuyo plan incluye ese examen, en vez de mandar todo el contenido a cada navegador.",
       ],
       outcomes: [
-        "Dos certificaciones de Google Cloud disponibles (Professional Data Engineer y Professional Cloud Architect) con más de 600 preguntas.",
-        "La usé para aprobar mi propio examen PDE.",
-        "Landing pública, páginas legales y un modo prueba que funciona sin registrarse.",
+        "En producción en certquestions.app, con clientes de pago.",
+        "Hay gente aprobando sus certificaciones con ella, yo incluido: Professional Data Engineer y Professional Cloud Architect.",
+        "Pasó de un examen que preparé para mí a un catálogo de certificaciones de Google Cloud y Google Workspace.",
       ],
-      nextStep:
-        "Más certificaciones y un pipeline que genere y valide preguntas a partir de la documentación oficial, con revisión humana de todo lo marcado.",
     },
     "x-ray": {
       tagline:

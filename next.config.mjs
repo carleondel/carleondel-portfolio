@@ -12,6 +12,8 @@ const nextConfig = {
       { source: "/about", destination: "/#about", permanent: true },
       { source: "/contact", destination: "/#contact", permanent: true },
       { source: "/writing", destination: "/blog", permanent: true },
+      { source: "/projects/dataforge", destination: "/projects/certquestions", permanent: true },
+      { source: "/es/projects/dataforge", destination: "/es/projects/certquestions", permanent: true },
     ];
   },
 };

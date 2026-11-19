@@ -11,6 +11,6 @@ export const siteConfig = {
     email: "carleondel@gmail.com",
   },
   work: { company: "Astrafy", url: "https://astrafy.io", logo: "/logos/astrafy.png" },
-  now: { project: "DataForge", slug: "dataforge" },
+  now: { project: "CertQuestions", slug: "certquestions" },
   sections: ["about", "builds", "data", "experience", "blog", "contact"] as SectionId[],
 };
