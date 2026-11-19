@@ -37,7 +37,7 @@ export const en: Dictionary = {
   now: {
     label: "Now",
     update:
-      "Taking my certification prep app from a personal study tool to a real product: more certifications, a pipeline to generate and validate questions from official docs, and the pieces needed to open it to the public.",
+      "Growing CertQuestions, my certification prep app: more exams, more people passing with it, and a product video on the way.",
   },
   intros: {
     builds:
@@ -111,30 +111,28 @@ export const en: Dictionary = {
     },
   },
   projects: {
-    dataforge: {
+    certquestions: {
       tagline:
-        "Certification prep SaaS with practice mode, timed mocks, and a gamified study loop.",
+        "Google Cloud certification practice with every option explained, timed mocks in the real exam format, and dated question banks.",
       summary:
-        "Started as my own prep tool for the Google Cloud Professional Data Engineer exam, which I passed. Now a multi-certification product with accounts, cloud sync, and a free trial.",
+        "Started as my own prep tool for the Google Cloud Professional Data Engineer exam, which I passed. Now a paid product at certquestions.app covering Google Cloud and Google Workspace certifications, with paying customers and people passing their exams with it.",
       role: "Solo: product, design & engineering",
-      status: "Live · free beta",
+      status: "Live · paid plans",
       context:
-        "I built the first version to study for the Google Cloud Professional Data Engineer exam, which I passed. Once it worked for me, the interesting question became whether it could work for other people too, so I turned it into a product.",
+        "Most certification prep gives you a letter and a forum thread. I wanted to understand why each answer was right, so I built my own tool for the Professional Data Engineer exam and used it again for Professional Cloud Architect. I passed both. Once it worked for me, the question became whether other people would pay for it, so I turned it into a product.",
       whatIBuilt:
-        "A React app with a static landing, sign-in through Supabase (Google, GitHub, email or magic link), progress synced across devices, and a 20-question trial that needs no account. It covers practice and block-by-block study, timed mocks weighted like the real exam, a daily challenge, and a gamification layer with XP, ranks, achievements, and boss battles.",
+        "A public landing and a study app. Every question explains why each option is right or wrong. Study blocks work through the whole bank, timed mocks follow each exam's real question count, duration, and domain weighting, and weak-spot sessions load your worst domains or past mistakes in one tap. There is a free trial for every exam with no account needed, one-time passes per exam or a Pro plan for several, and an optional rewards layer with XP, ranks, streaks, and a daily challenge.",
       architecture: [
-        "A cert-agnostic engine: each certification is a folder with its manifest, domains, and question bank, so adding one doesn't touch the app.",
-        "localStorage is the cache the app reads from. Every key is mirrored to Supabase (debounced, with row-level security per user), and unconfirmed writes are pushed on the next visit.",
-        "Views only present and emit. State lives in hooks and a pure engine covered by Vitest, and question banks ship as lazy-loaded chunks.",
-        "Deploys to Vercel on every push, and also runs fully local or in Docker behind nginx.",
+        "One engine for every exam: each certification is just content (its domains, weights, and question bank), so adding a new exam never touches the app.",
+        "Content quality as a feature: every bank shows the date it was last updated, and questions that no longer match the current exam are flagged as outdated instead of quietly kept.",
+        "Progress is saved on every answer and synced across devices, so a mock left halfway comes back exactly where you left it, on any device.",
+        "Paid question banks are served only to accounts whose plan covers that exam, instead of shipping the full content to every browser.",
       ],
       outcomes: [
-        "Two Google Cloud certifications live (Professional Data Engineer and Professional Cloud Architect) with 600+ practice questions.",
-        "Used for my own successful PDE exam attempt.",
-        "Public landing, legal pages, and a trial mode that works without signing up.",
+        "Live at certquestions.app, with paying customers.",
+        "People are passing their certification exams with it, me included: Professional Data Engineer and Professional Cloud Architect.",
+        "Grew from one exam built for myself to a catalog of Google Cloud and Google Workspace certifications.",
       ],
-      nextStep:
-        "More certifications, and a pipeline that generates and validates questions from official documentation, with human review of anything flagged.",
     },
     "x-ray": {
       tagline:
