@@ -54,6 +54,7 @@ export interface Dictionary {
     allProjects: string;
     nextProject: string;
     video: string;
+    enableSound: string;
     watchDemo: string;
     categories: { product: string; data: string };
     theme: { toLight: string; toDark: string };

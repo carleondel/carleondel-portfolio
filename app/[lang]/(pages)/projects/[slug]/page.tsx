@@ -131,7 +131,7 @@ export default function ProjectPage({ params }: Props) {
                 <PlayCircle size={14} className="text-accent" />
                 {dict.ui.watchDemo}
               </p>
-              <VideoPlayer video={project.video} title={`${project.title} demo`} />
+              <VideoPlayer enableSound={dict.ui.enableSound} video={project.video} title={`${project.title} demo`} />
             </>
           ) : (
             project.image && (

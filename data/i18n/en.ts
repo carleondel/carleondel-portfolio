@@ -58,6 +58,7 @@ export const en: Dictionary = {
     allProjects: "All projects",
     nextProject: "Next project",
     video: "Video",
+    enableSound: "Enable sound",
     watchDemo: "Watch the demo",
     categories: { product: "Things I've built", data: "Data products" },
     theme: { toLight: "Switch to light mode", toDark: "Switch to dark mode" },
