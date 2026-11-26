@@ -29,6 +29,11 @@ export const projects: Project[] = [
     year: "2026",
     stack: ["React", "Vite", "Supabase", "PostgreSQL", "Vitest"],
     image: "/projects/certquestions.jpg",
+    video: {
+      type: "file",
+      src: "/videos/certquestions-launch.mp4",
+      poster: "/projects/certquestions-launch-poster.jpg",
+    },
     links: {
       live: "https://certquestions.app",
     },
